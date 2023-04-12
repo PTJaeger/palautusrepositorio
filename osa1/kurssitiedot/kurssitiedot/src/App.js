@@ -41,7 +41,7 @@ const App = () => {
       </div>
     )
   }
-  const Total = (props) => {
+  const Total = () => {
     return (
       <div>
         <p>
