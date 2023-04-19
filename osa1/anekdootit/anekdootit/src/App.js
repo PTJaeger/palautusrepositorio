@@ -8,12 +8,6 @@ const Rand = ({}) => {
 
 }
 
-const Voting = ({}) => {
-  
-}
-
-
-
 const App = () => {
   const anecdotes = [
     'If it hurts, do it more often.',
@@ -28,13 +22,21 @@ const App = () => {
    
   const [selected, setSelected] = useState(0)
 
-  const [points, setPoints] = useState(0)
+  const [points, setPoints] = useState(new Array(anecdotes.length).fill(0))
+
+  const Voting = ({}) => {
+    const pointsCopy = [...points];
+  }
 
   return (
     <div>
+      <h1></h1>
+      <p> {anecdotes[selected]}</p>
+      <p>----------------------------------------------------------------------------------</p>
+      <p> Has {points[selected]} points. </p>
+      
 
-      {anecdotes[selected]}
-      <Button> handleClick={() => setSelected(selected)}</Button>
+      <Button handleClick={() => setSelected(Math.floor(Math.random() * anecdotes.length))} label = "Next anecdote" />
     </div>
   )
 }
