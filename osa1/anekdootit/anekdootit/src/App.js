@@ -21,7 +21,7 @@ const App = () => {
   const [points, setPoints] = useState(new Array(anecdotes.length).fill(0))
 
   const Voting = () => {
-    const pointsCopy = [...points];
+    const pointsCopy = [...points];  
     pointsCopy[selected] +=1;
     setPoints(pointsCopy);
   }
@@ -31,6 +31,7 @@ const App = () => {
   return (
     <div>
       <h1>Random Programming Anecdotes</h1>
+      
       <p> {anecdotes[selected]}</p>
       <p>----------------------------------------------------------------------------------</p>
       <p> Has {points[selected]} points. </p>
@@ -40,7 +41,8 @@ const App = () => {
       <Button handleClick={() => Voting()} label="Vote for the anecdote"/>
 
       <h2>Anecdote with the most votes: </h2> 
-      <p>{anecdotes[FindBestAnecdote]} Has {points[FindBestAnecdote]} votes</p> 
+      <p>{anecdotes[FindBestAnecdote]} </p> 
+      <p> Has {points[FindBestAnecdote]} votes. </p>
     </div>
   )
 }
