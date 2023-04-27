@@ -18,7 +18,7 @@ const App = () => {
    
   const [selected, setSelected] = useState(0)
 
-  const [points, setPoints] = useState(new Array(anecdotes.length).fill(0))
+  const [points, setPoints] = useState(anecdotes.map((an) => an = 0))
 
   const Voting = () => {
     const pointsCopy = [...points];  
